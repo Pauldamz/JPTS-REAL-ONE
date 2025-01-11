@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JPTS Online Clearance System - Center Form</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <style>
+    header {
+          text-align: center;
+          margin-bottom: 20px;
+          animation: fadeIn 1.5s ease-in-out;
+          background-color: #D1005E;
+          padding: 10px;
+          border-radius: 8px;
+      }
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1> Center Form</h1>
+      </header>
+
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="departments.html">Departments</a>
+        <a href="profile.html">Profile</a>
+        <a href="index.html">Logout</a>
+      </nav>
+
+      <div class="content">
+        <h2 id="department-name">Center Clearance Form</h2>
+        <form action="departments.html" method="GET">
+          <div class="form-group">
+            <label for="student-id">Student ID:</label>
+            <input type="text" id="student-id" name="student-id" required />
+          </div>
+          <div class="form-group">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required />
+          </div>
+          <div class="form-group">
+            <label for="clearance-reason">Reason for Clearance:</label>
+            <textarea
+              id="clearance-reason"
+              name="clearance-reason"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="upload-document">Upload Supporting Document:</label>
+            <input type="file" id="upload-document" name="upload-document" />
+          </div>
+          <button type="submit" class="btn">Submit for Clearance</button>
+        </form>
+      </div>
+
+      <footer>
+        <p>&copy; JPTS 2023</p>
+      </footer>
+    </div>
+    <script>
+      // Simple script to update the department name based on URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const dept = urlParams.get('dept');
+      if (dept) {
+          document.getElementById('department-name').textContent = dept.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()) + ' Clearance Form';
+      }
+    </script>
+  </body>
+</html>

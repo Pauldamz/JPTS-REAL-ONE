@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JPTS Online Clearance System - Profile</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <style>
+    header {
+          text-align: center;
+          margin-bottom: 20px;
+          animation: fadeIn 1.5s ease-in-out;
+          background-color: #D1005E;
+          padding: 10px;
+          border-radius: 8px;
+      }
+
+      /* Profile picture styling */
+      .profile-picture {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .profile-img-container img {
+        border-radius: 50%;
+        max-width: 150px;
+        max-height: 150px;
+        object-fit: cover;
+      }
+
+      .profile-picture input[type="file"] {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Profile</h1>
+      </header>
+
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="departments.html">Departments</a>
+        <a href="profile.html" class="active">Profile</a>
+        <a href="index.html">Logout</a>
+      </nav>
+
+      <div class="content">
+        <h2>Student Profile</h2>
+
+        <!-- Profile Picture Section -->
+        <div class="profile-picture">
+          <label for="profile-pic">Profile Picture</label>
+          <div class="profile-img-container">
+            <!-- Default Profile Picture -->
+            <img id="profile-img" src="https://via.placeholder.com/150" alt=""/>
+          </div>
+          <input type="file" id="profile-pic" name="profile-pic" accept="image/*" onchange="previewImage(event)">
+        </div>
+
+        <form action="dashboard.html" method="GET">
+          <div class="form-group">
+            <label for="student-id">Student ID:</label>
+            <input
+              type="text"
+              id="student-id"
+              name="student-id"
+              value="12345"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="full-name">Full Name:</label>
+            <input
+              type="text"
+              id="full-name"
+              name="full-name"
+              value="John Doe"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="john.doe@example.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value="1234567890"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="department">Department:</label>
+            <input
+              type="text"
+              id="department"
+              name="department"
+              value="Computer Science"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="graduation-year">Expected Graduation Year:</label>
+            <input
+              type="number"
+              id="graduation-year"
+              name="graduation-year"
+              value="2023"
+              required
+            />
+          </div>
+          <button type="submit" class="btn">Update Profile</button>
+        </form>
+      </div>
+
+      <footer>
+        <p>&copy; JPTS 2023</p>
+      </footer>
+    </div>
+
+    <script>
+      // Function to preview the uploaded image
+      function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+          var output = document.getElementById('profile-img');
+          output.src = reader.result; // Set the image src to the uploaded file
+        }
+        reader.readAsDataURL(event.target.files[0]);
+      }
+    </script>
+  </body>
+</html>

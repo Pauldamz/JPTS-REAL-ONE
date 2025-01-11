@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #D1005E; /* Updated color */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+nav {
+  background-color: #D1005E; /* Updated color */
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+nav a.active {
+  background-color: #002040;
+  border-radius: 5px;
+}
+
+.content {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  display: inline-block;
+  background-color: #D1005E; /* Updated color */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.btn:hover {
+  background-color: #002040;
+}
+
+.btn-disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+  background-color: #cccccc;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.progress-bar {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  transition: width 0.5s ease-in-out;
+}
+
+.status-list,
+.department-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.status-list li,
+.department-list li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.completed {
+  color: green;
+}
+
+.pending {
+  color: orange;
+}
+
+.not-started {
+  color: red;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin-bottom: 5px;
+  }
+}
