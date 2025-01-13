@@ -121,7 +121,7 @@
 
       <div class="content">
         <h2>Login</h2>
-        <form action="welcome.html" method="POST">
+        <form id="login-form">
           <div class="form-group">
             <label for="student-id">Student ID</label>
             <input type="text" id="student-id" name="student-id" required>
@@ -130,7 +130,7 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
           </div>
-          <button type="submit" name="submit" class="btn">Login</button>
+          <button type="submit" class="btn">Login</button>
         </form>
         <div class="forgot-password">
           <a href="#">Forgot Password?</a>
@@ -141,5 +141,27 @@
         <p>&copy; 2025 JPTS Clearance System</p>
       </footer>
     </div>
+
+    <script>
+      // Your login credentials (replace with actual checks if needed)
+      const validUsername = 'student123';
+      const validPassword = 'password123';
+
+      // Handle form submission
+      document.getElementById('login-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent form from submitting normally
+
+        const studentId = document.getElementById('student-id').value;
+        const password = document.getElementById('password').value;
+
+        // Simple check (replace with more robust logic in real use)
+        if (studentId === validUsername && password === validPassword) {
+          sessionStorage.setItem('loggedIn', true);  // Set session storage
+          window.location.href = 'welcome.html';      // Redirect to welcome page
+        } else {
+          alert('Invalid credentials! Please try again.');
+        }
+      });
+    </script>
 </body>
 </html>

@@ -14,7 +14,7 @@
           padding: 10px;
           border-radius: 8px;
       }
-</style>
+    </style>
   </head>
   <body>
     <div class="container">
@@ -31,7 +31,7 @@
 
       <div class="content">
         <h2 id="department-name">Academic Clearance Form</h2>
-        <form action="departments.html" method="GET">
+        <form action="/.netlify/functions/submitForm" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <label for="student-id">Student ID:</label>
             <input type="text" id="student-id" name="student-id" required />
@@ -57,11 +57,10 @@
       </div>
 
       <footer>
-        <p>&copy; JPTS 2023</p>
+        <p>&copy; JPTS 2025</p>
       </footer>
     </div>
     <script>
-      // Simple script to update the department name based on URL parameter
       const urlParams = new URLSearchParams(window.location.search);
       const dept = urlParams.get('dept');
       if (dept) {
