@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "form-data": "^4.0.1",
     "nodemailer": "^6.9.16"
   }
 }
